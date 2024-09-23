@@ -1,0 +1,32 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.0.1
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: mixed-line-ending
+      - id: debug-statements
+
+  - repo: https://github.com/psf/black
+    rev: 23.11.0
+    hooks:
+      - id: black
+        language_version: python3.9
+      - id: black-jupyter
+        language_version: python3.9
+        args: [--line-length=100]
+
+  - repo: https://github.com/PyCQA/flake8
+    rev: 6.0.0
+    hooks:
+      - id: flake8
+
+  # - repo: local
+  #   hooks:
+  #     - id: testing
+  #       name: testing
+  #       entry: pytest
+  #       language: system
+  #       files: ^tests/
+  #       always_run: true
